@@ -21,3 +21,18 @@ class Welcome extends Component {
 
 }
 export default Welcome;
+
+
+// {
+//   "gender": "Frau",
+//   "firstname": "Sarah",
+//   "lastname": "Connor",
+//   "plz": "12343",
+//   "place": "Los Angeles",
+//   "street": "Sunset blvd.",
+//   "streetNumber": "84",
+//   "email": "sarah@gmail.com",
+//   "birthday": "01.01.1960",
+//   "loggedIn": "true",
+//   "id": "vkBCXXY"
+// }

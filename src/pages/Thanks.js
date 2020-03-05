@@ -22,20 +22,27 @@ class Thanks extends Component {
   
   fetchName = async () => {
     const result = await axios.get("http://localhost:5000/users?loggedIn=true");
-    console.log(result.data[0]);
+    // console.log(result.data[0]);
     const obj = result.data[0];
-    this.setState({...this.state, firstname: obj.firstname});
+    try {
+      this.setState({...this.state, firstname: obj.firstname});
+    }
+    catch {
+      this.setState({...this.state, firstname: "guest"});
+    }
+    
   }
 
   handleClick = async (event) => {
-    console.log(this.fetchName()).then(console.log("amis dedas sheveci"));
     event.preventDefault();
     const result = await axios.get("http://localhost:5000/users?loggedIn=true");
     const obj = result.data;
-    axios.delete("http://localhost:5000/users?id=" + Object.entries(obj)[0].id);
-    obj.loggedIn = "false";
-    axios.post("http://localhost:5000/users", obj);
-    // .then(window.location.href = '/welcome');
+    console.log(obj.length);
+    console.log(obj[0]);
+    const id = obj[0].id;
+    axios.patch("http://localhost:5000/users/"+id, {
+      loggedIn: "false"
+    }).then(window.location.href = '/welcome');
   }
 
   
@@ -48,7 +55,7 @@ class Thanks extends Component {
 
         <br></br>
 
-        <button type="submit" className="round-button">
+        <button type="submit" className="round-button" onClick={this.handleClick}> 
           >
         </button>
       </div>

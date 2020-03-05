@@ -34,12 +34,14 @@ export default class QuickRegistration extends Component {
     
         if(Object.entries(obj).length === 0)
         {
-            // axios.post("http://localhost:5000/users", formData);
             window.location.href = '/registration';
         }
         else
         {
-            axios.put("http://localhost:5000/users?loggedIn=", "true")
+            // console.log(obj[0].id);
+            axios.patch("http://localhost:5000/users/" + obj[0].id, {
+                loggedIn: "true"
+            })
             window.location.href = '/alreadyregistered';
         }
     }
@@ -68,7 +70,7 @@ export default class QuickRegistration extends Component {
                     </input>
                     <br></br>
                     <br></br>
-                    <button type="submit" className="round-button">
+                    <button type="submit" className="round-button" onClick={this.handleSubmit}>
                         >
                     </button>
                 </form>

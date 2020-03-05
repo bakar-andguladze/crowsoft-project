@@ -1,7 +1,56 @@
 import React, { Component, setState } from "react";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class AlreadyRegistered extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      firstname: "",
+      loggedIn: "true"
+    }
+    this.handleClick = this.handleClick.bind(this);
+    this.fetchName = this.fetchName.bind(this);
+
+    this.setState();
+  } 
+
+  componentDidMount() {
+    this.fetchName();
+  }
+  
+  fetchName = async () => {
+    const result = await axios.get("http://localhost:5000/users?loggedIn=true");
+    console.log(result.data[0]);
+    const obj = result.data[0];
+    try {
+      this.setState({...this.state, firstname: obj.firstname});
+    }
+    catch {
+      this.setState({...this.state, firstname: "guest"});
+    }
+  }
+
+  handleClick = async (event) => {
+    event.preventDefault();
+    const result = await axios.get("http://localhost:5000/users?loggedIn=true");
+    const obj = result.data;
+
+    console.log(obj.length);
+    console.log(obj[0]);
+    
+    try {
+      const id = obj[0].id;
+      axios.patch("http://localhost:5000/users/"+id, {
+        loggedIn: "false"
+      }).then(window.location.href = '/welcome');
+    }
+    catch {
+      window.location.href = '/welcome';
+    }
+
+  }
 
 
   render() {
@@ -11,12 +60,12 @@ class AlreadyRegistered extends Component {
           <div className="thanks">SCHÖN, DICH <br></br>WIEDER ZU SEHEN!</div>
           <br></br>
           <br></br>
-          <div className="thanks-b">Super, , <br></br>du bist schon dabei! </div>
+          <div className="thanks-b">Super, {(this.state.firstname)}, <br></br>du bist schon dabei! </div>
         </div>
 
         <br></br>
 
-        <button type="submit" className="round-button">
+        <button type="submit" className="round-button" onClick={this.handleClick}>
           >
         </button>
       </div>

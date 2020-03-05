@@ -1,14 +1,43 @@
 {
   "users": [
     {
-      "id": "1",
+      "gender": "Frau",
       "firstname": "Sarah",
       "lastname": "Connor",
-      "plz": "10010",
+      "plz": "12343",
+      "place": "Los Angeles",
+      "street": "Sunset blvd.",
+      "streetNumber": "84",
       "email": "sarah@gmail.com",
-      "age": 34,
-      "companyId": "1",
-      "loggedIn": "true"
+      "birthday": "01.01.1960",
+      "loggedIn": "false",
+      "id": "vkBCXXY"
+    },
+    {
+      "gender": "Herr",
+      "firstname": "Bakar",
+      "lastname": "Andguladze",
+      "plz": "80689",
+      "place": "München",
+      "street": "Haslangstraße",
+      "streetNumber": "34",
+      "email": "baqar.andghuladze@gmail.com",
+      "birthday": "21.04.1994",
+      "loggedIn": "false",
+      "id": "BXjYcwK"
+    },
+    {
+      "gender": "Herr",
+      "firstname": "Jimmy",
+      "lastname": "Page",
+      "plz": "13456",
+      "place": "London",
+      "street": "Zeppelin str.",
+      "streetNumber": "71",
+      "email": "jimmy.page@gmail.com",
+      "birthday": "09.01.1944",
+      "loggedIn": "true",
+      "id": "SQyEwY9"
     }
   ]
 }
