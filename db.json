@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstname": "Sarah",
+      "lastname": "Connor",
+      "plz": "10010",
+      "email": "sarah@gmail.com",
+      "age": 34,
+      "companyId": "1",
+      "loggedIn": "true"
+    }
+  ]
+}

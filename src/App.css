@@ -1,38 +1,106 @@
 .App {
   text-align: center;
+  color: white;
+  background: linear-gradient(90deg, rgba(15,10,89,1) 0%, rgba(14,81,167,1) 50%, rgba(0,212,255,1) 100%);
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  /* border: 3px solid black; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.welcome {
+  margin-bottom: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.crowsoft {
+  font-size: 2em;
+  padding: 0;
+  margin-top: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1 {
+  padding:0;
+  margin:0;
+}
+
+h3 {
+  margin-top: 0;
+  padding-top: 1em;
+}
+.xxx {
+  padding-top: 4em;
+  font-size: 1.5em;
+}
+
+.radio-input {
+  float: left;
+  margin-left: 2em;
+}
+label {
+  float:left;
+}
+
+.round-button {
+  border-radius: 100%;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  width: 3em;
+  height: 3em;
+  font-size: 1em;
+  position: relative;
+  bottom: 10%;
+  
+}
+
+.input-field {
+  background: transparent;
+  color: white;
+  width: 85%;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin-top: 2em;
+  font-size: 1em;
+}
+/* ===================== Footer Design ======================== */
+/* ============================================================ */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: red; */
+  color: white;
+  text-align: center;
+}
+
+.footer-link-a {
+  color: white;
+  float: left;
+  padding-left: 5%;
+  padding-bottom: 1%;
+}
+
+.footer-link-b {
+  color: white;
+  float: right;
+  padding-right: 5%;
+  padding-bottom: 1%;
+}
+/* ============================================================ */
+
+.link{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.thanks {
+  padding-top: 40%;
+  font-size: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.thanks-b {
+  padding-top: 40%;
+  font-size: 1.5em;
 }
